@@ -5,17 +5,16 @@ package projeto_git;
 
 public class no {
   private int valor; 
-
-    public no(int valor) {
-        this.valor = valor;
+  private no proximo;
+    this.proximo = proximo;
     }
  public int getvalor(){
-     return valor;
+     return proximo;
  }
  
  public void setvalor(int valor){
-     this.valor = valor;
- }}
+     this.proximo = proximo;
+ }
 
  
  

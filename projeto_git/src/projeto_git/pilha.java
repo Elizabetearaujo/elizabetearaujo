@@ -4,62 +4,61 @@ package projeto_git;
 
 public class pilha implements interfacepilhaencadeada {
  
-private int topo = -1;  
-private int total;
-private no pilha[];
+private int tamanho = 0;  
+private no topo;
+tamanho ++;
 
-
-    @Override
-    public void criarpilha(int tamanho) {
-        this.pilha = new no [tamanho];
-        this.total = tamanho; 
+@Override
+    public void criarpilha() {
+        topo = new no (-1, null);
+        //this.total = tamanho; 
     }
-
-    @Override
-    public boolean evazia() {
-        return topo < 0;
-    }
-    @Override
-    public boolean echeia() {
-        return (this.topo + 1 == total);
-    }
-
     @Override
     public int tamanho() {
-        return topo + 1;
+        return tamanho==0;
     }
-
+    @Override
+    public boolean evazia() {
+        return tamanho ==0;
+    }
     @Override
     public void limpar() {
+    topo.setproximo (null);
     }
-   
     @Override
     public no push(int valor) {
-      no elemento = new no (valor);
-      if (!echeia()){
-      this.pilha [++topo] = elemento;  
-          System.out.println("Valor" +valor+ " Add ");
-      return elemento;
-      }
-    return null;
-}
+      no novo = new no (valor, null);
+      novo.setproximo(topo.getproximo());
+      topo.setproximo(novo);
+      return novo;
+    }
     @Override
     public no pop() {
-        no x = pilha[topo];
-        pilha [topo] = null;
-               
-        return x;
+    if (!evazia()){
+    System.out.println("Nao possui valor");
+         return null;
+    }         
+    else{
+        
+    no aux = topo .getproximo();
+    topo.setproximo(topo.getproximo().getproximo());
+    return aux;
     }
-
     @Override
     public int pegarTopo() {
-        return pilha [topo].getvalor();
+        return topo.getproximo().getvalor();
     }
-
     @Override
     public void listar() {
-        for(int i = topo; i == 0; i--){
-            System.out.println(pilha [i].getvalor());
-        }}}
+        if(evazia())
+            System.out.println("vazia"
+                    else{
+            no aux= topo.getproximo();
+        }
+            while (aux !=null){
+                System.out.println(aux.getvalor());
+                aux = aux.getproximo();
+            }
+            }}}
     
 
